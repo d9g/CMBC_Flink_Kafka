@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FlinkMain (case-dev)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.sensorsdata.analytics.FlinkMain" />
+    <module name="CMBC_Flink_Kafka" />
+    <option name="PROGRAM_PARAMETERS" value="src/main/resources/case-dev.properties" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.sensorsdata.analytics.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

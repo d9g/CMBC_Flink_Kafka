@@ -151,6 +151,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.83</version> <!-- 根据需要调整版本号 -->
         </dependency>
+        <!-- RDM/case 配置：FlinkMain 入口需要 args[0] 指向的 case 配置文件 -->
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.10</version>
+        </dependency>
 
     </dependencies>
 
@@ -183,6 +189,18 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 本地运行：mvn compile exec:java -Dexec.args="src/main/resources/case-dev.properties" -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.sensorsdata.analytics.FlinkMain</mainClass>
+                    <arguments>
+                        <argument>src/main/resources/case-dev.properties</argument>
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>
